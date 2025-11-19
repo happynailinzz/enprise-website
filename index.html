@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华曜数智 | 政企数字化转型与智能升级领先服务商</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans SC', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#1e293b',    // Slate-800
+                            base: '#475569',    // Slate-600
+                            light: '#94a3b8',   // Slate-400
+                            red: '#dc2626',     // Red-600
+                            bg: '#f8fafc',      // Slate-50
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        /* Hide content until loaded to prevent FOUC, handled by React */
+        #root:empty {
+            min-height: 100vh;
+        }
+    </style>
+    
+    <!-- Global Error Handler -->
+    <script>
+        window.addEventListener('error', function(event) {
+            console.error('Global Script Error:', event.error);
+            const root = document.getElementById('root');
+            if (root && root.innerHTML === '') {
+                root.innerHTML = '<div style="padding: 20px; color: #dc2626; font-family: sans-serif;"><h3>页面加载遭遇严重错误</h3><p>请查看浏览器控制台(F12)获取详细信息。</p><p>错误信息: ' + event.message + '</p></div>';
+            }
+        });
+    </script>
+
+    <!-- 
+      STRICT IMPORT MAP
+      Only references React 18.2.0 from esm.sh.
+      Uses ?deps=react@18.2.0 to force dependencies to share the same React instance.
+    -->
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime",
+    "react-dom": "https://esm.sh/react-dom@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "react-router-dom": "https://esm.sh/react-router-dom@6.22.3?deps=react@18.2.0,react-dom@18.2.0",
+    "@remix-run/router": "https://esm.sh/@remix-run/router@1.15.3",
+    "lucide-react": "https://esm.sh/lucide-react@0.344.0?deps=react@18.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+</head>
+<body class="font-sans antialiased selection:bg-brand-dark selection:text-white bg-brand-bg">
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+</body>
+</html>
